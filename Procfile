@@ -1,1 +1,1 @@
-web: gunicorn murpositif.wsgi
+web: gunicorn wsgi
