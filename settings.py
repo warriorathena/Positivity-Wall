@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 # --- Base directory ---
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 # --- Sécurité ---
 SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')  # remplace la valeur en local si besoin
@@ -77,7 +77,8 @@ USE_TZ = True
 
 # --- Fichiers statiques ---
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # --- Clé par défaut pour les modèles ---
