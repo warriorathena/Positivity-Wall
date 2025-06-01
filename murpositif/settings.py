@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 # --- Base directory ---
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # --- Sécurité ---
 SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')  # remplace la valeur en local si besoin
