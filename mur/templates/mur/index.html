@@ -18,6 +18,9 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
@@ -58,7 +61,7 @@
   }
 </style>
 
-<body class="min-h-screen bg-cover bg-center bg-no-repeat text-black dark:text-white font-sans cursor-[url('{% static 'mur/banana.cur' %}'),_auto]"
+<body class="min-h-screen bg-cover bg-center bg-no-repeat text-black dark:text-white font-sans custom-cursor"
       style="background-image: url('/static/mur/yellowbg.png');">
 
   <div class="bg-pink-100/30 dark:bg-gray-900 min-h-screen">
