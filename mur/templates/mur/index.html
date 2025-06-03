@@ -6,7 +6,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Mur d'expression positif</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,14 +19,15 @@
     };
   </script>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  {% load static %}
+  <!-- Ton CSS -->
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
+    }
+    .font-anton {
+      font-family: 'Anton', sans-serif;
     }
   </style>
 
@@ -32,18 +36,13 @@
     function setThemeIcon() {
       const html = document.documentElement;
       const icon = document.getElementById('theme-icon');
-      if (html.classList.contains('dark')) {
-        icon.textContent = '☀️';
-      } else {
-        icon.textContent = '🌙';
-      }
+      icon.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
     }
 
     function toggleTheme() {
       const html = document.documentElement;
       html.classList.toggle('dark');
-      const theme = html.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
       setThemeIcon();
     }
 
@@ -55,15 +54,7 @@
   </script>
 </head>
 
-<style>
-  .font-anton {
-    font-family: 'Anton', sans-serif;
-  }
-</style>
-
-<body class="min-h-screen bg-cover bg-center bg-no-repeat text-black dark:text-white font-sans custom-cursor"
-      style="background-image: url('/static/mur/yellowbg.png');">
-
+<body class="text-black dark:text-white font-sans custom-cursor">
   <div class="bg-pink-100/30 dark:bg-gray-900 min-h-screen">
     <div class="text-center max-w-3xl mx-auto py-10 px-4">
       <div class="flex justify-between items-center mb-6">
@@ -129,7 +120,7 @@
     <!-- Footer -->
     <footer class="mt-16 bg-pink-600 text-white dark:bg-gray-800 dark:text-gray-100 py-6 rounded-t-xl shadow-inner">
       <p class="text-center font-semibold text-lg">✨ Merci de partager de la douceur ✨</p>
-      <p class="text-center text-sm mt-2">&copy; 2025 -   Victoria Tahay - Fait avec 💛.</p>
+      <p class="text-center text-sm mt-2">&copy; 2025 - Victoria Tahay - Fait avec 💛.</p>
     </footer>
   </div>
 

@@ -7,7 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --- Sécurité ---
 SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')  # remplace la valeur en local si besoin
 DEBUG = False
-ALLOWED_HOSTS = ['positivity-wall.onrender.com']  # ou ['positivity-wall.onrender.com'] en prod stricte
+ALLOWED_HOSTS = ['positivity-wall.onrender.com', '127.0.0.1', 'localhost']
+DEBUG = True  # (facultatif pour les tests locaux)
 
 # --- Applications ---
 INSTALLED_APPS = [
@@ -77,8 +78,8 @@ USE_TZ = True
 
 # --- Fichiers statiques ---
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # --- Clé par défaut pour les modèles ---
