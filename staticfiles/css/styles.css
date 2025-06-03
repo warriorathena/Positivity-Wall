@@ -1,3 +1,10 @@
 .custom-cursor {
   cursor: url("/static/mur/banana.cur"), auto;
 }
+
+body {
+  background-image: url("/static/mur/yellowbg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
