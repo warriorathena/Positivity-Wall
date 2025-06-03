@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --- Sécurité ---
 SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')  # remplace la valeur en local si besoin
 DEBUG = False
-ALLOWED_HOSTS = ['*']  # ou ['positivity-wall.onrender.com'] en prod stricte
+ALLOWED_HOSTS = ['positivity-wall.onrender.com']  # ou ['positivity-wall.onrender.com'] en prod stricte
 
 # --- Applications ---
 INSTALLED_APPS = [
